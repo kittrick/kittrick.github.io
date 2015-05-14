@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>javencrypt</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="input">
+			<h1>Javencrypt</h1>
+			<form id="encrypt" action="#encrypt">
+				<fieldset>
+					<legend>Encrypt</legend>
+					<textarea id="encrypttext" class="input" placeholder="input"></textarea>
+					<input id="encryptkey" type="text" name="key" placeholder="Key"></input>
+					<button type="submit">Submit</button>
+				</fieldset>
+			</form>
+			<form id="decrypt" action="#decrypt">
+				<fieldset>
+					<legend>Decrypt</legend>
+					<textarea id="decrypttext" class="input" placeholder="input"></textarea>
+					<input id="decryptkey" type="text" name="key" placeholder="Key"></input>
+					<button type="submit">Submit</button>
+				</fieldset>
+			</form>
+		</div>
+		<script src="js/javencrypt.1.js"></script>
+	</body>
+</html>
