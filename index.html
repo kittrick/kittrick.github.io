@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>javencrypt</title>
+		<title>javexpense</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	</head>
 	<body>
 		<div id="input">
-			<h1>Javencrypt</h1>
-			<form id="encrypt" action="#encrypt">
-				<fieldset>
-					<legend>Encrypt</legend>
-					<textarea id="encrypttext" class="input" placeholder="input"></textarea>
-					<input id="encryptkey" type="text" name="key" placeholder="Key"></input>
-					<button type="submit">Submit</button>
-				</fieldset>
-			</form>
-			<form id="decrypt" action="#decrypt">
-				<fieldset>
-					<legend>Decrypt</legend>
-					<textarea id="decrypttext" class="input" placeholder="input"></textarea>
-					<input id="decryptkey" type="text" name="key" placeholder="Key"></input>
-					<button type="submit">Submit</button>
-				</fieldset>
+			<h1>javexpense</h1>
+			<p class="description">This utility with give you a daily expenditure based on a 30 day month.</p>
+			<form id="form" action="#expenses">
+				<table>
+					<tr>
+						<td>
+							<label for="rent">Rent</label>
+							<span>$</span><input id="rent" type="text" type= name="rent" placeholder="Rent"></input><br/>
+							<label for="utilities">Utilities</label>
+							<span>$</span><input id="utilities" type="text" type= name="utilities" placeholder="Utilities"></input><br/>
+							<label for="food">Food</label>
+							<span>$</span><input id="food" type="text" type= name="food" placeholder="Food"></input><br/>
+							<label for="gas">Gas</label>
+							<span>$</span><input id="gas" type="text" type= name="gas" placeholder="Gas"></input><br/>
+							<label for="other">Other</label>
+							<span>$</span><input id="other" type="text" type= name="other" placeholder="Other"></input><br/>
+						</td>
+						<td>
+							<label for="income">Monthly Income</label><br/>
+							<span>$</span><input id="income" type="text" name="income" placeholder="Income"></input>
+						</td>
+					<tr>
+				</table>
 			</form>
 		</div>
-		<script src="js/javencrypt.1.js"></script>
+		<div id="output">
+			<p></p>
+		</div>
+		<script src="js/javexpense.js"></script>
 	</body>
 </html>
