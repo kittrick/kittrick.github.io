@@ -8,12 +8,14 @@ function updateOutput(){
 		food : $('#food')[0].value,
 		gas : $('#gas')[0].value,
 		other : $('#other')[0].value,
-		income : $('#income')[0].value	
+		income : $('#income')[0].value,
+		savings : $('#savings')[0].value,
+		duration : $('#duration')[0].value
 	};
 	
 	// Make sure they are good
 	if( valueCheck(inputs) ) {
-		output = 'Numbers only please.';
+		text = 'Numbers only please.';
 	} else {
 		expenses = Number(inputs.rent)
 				 + Number(inputs.utilities)
@@ -21,17 +23,22 @@ function updateOutput(){
 				 + Number(inputs.gas)
 				 + Number(inputs.other);
 		income = Number(inputs.income);
-		output = (income - expenses)/30;
+		savings = Number(inputs.savings);
+		duration = Number(inputs.duration);
+		
+		output = (income - expenses) / 30;
 		output = output.toFixed(2);
 		if(isNaN(output)){
-			output = 'Please doublecheck your entry.';
+			text = 'Please doublecheck your entry.';
 		} else {
-			output = '$' + output + ' per day.';
+			save = savings / duration / 30;
+			text = 'You should save $' + save.toFixed(2);
+			text += ' of $' + output + ' per day.';
 		}
 	}
 	
 	// Put output into HTML
-	$('#output p').html(output);
+	$('#output p').html(text);
 }
 
 // Value Check
@@ -42,7 +49,7 @@ function valueCheck(inputs){
 			x++;
 		}
 	}
-	if(x == 5) {
+	if(x == 8) {
 		return true;
 	} else {
 		return false;
